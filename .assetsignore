@@ -1,0 +1,27 @@
+# Exclude node_modules and build-time dependencies created in Cloudflare CI
+node_modules
+.git
+.github
+.wrangler
+
+# Exclude server scripts and build configs
+*.py
+*.pyc
+__pycache__
+server.py
+package.json
+package-lock.json
+
+# Documentation and meta
+README.md
+.gitignore
+.assetsignore
+wrangler.toml
+
+# System files and media
+.DS_Store
+.tmp.*
+*.mp4
+*.mov
+*.gdoc
+*.gsheet
