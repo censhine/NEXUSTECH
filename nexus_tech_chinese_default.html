@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS TECH | Cyberpunk & EDC Direct from Huaqiangbei</title>
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            dark: {
+              950: '#060913',
+              900: '#0b0f19',
+              850: '#111726',
+              800: '#161f33',
+              700: '#222f4c',
+            },
+            cyber: {
+              blue: '#2563eb',
+              cyan: '#00f0ff',
+              indigo: '#6366f1',
+              neon: '#10b981',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(17, 23, 38, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 240, 255, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.15);
+    }
+    .neon-glow {
+      box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.5);
+    }
+    .cyber-gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #00f0ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-500 text-white text-xs font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    <span data-i18n="announcement">限时闪购：满 $49 享欧美 7 天特快专线包邮 · 华强北源头直发</span>
+  </div>
+
+  <!-- Modern Navigation Header -->
+  <header class="sticky top-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center font-display font-black text-xl text-black shadow-lg shadow-cyan-500/20">
+          N
+        </div>
+        <div>
+          <span class="font-display text-2xl font-bold tracking-tight text-white">NEXUS<span class="text-cyan-400">TECH</span></span>
+          <span class="block text-[10px] uppercase font-mono tracking-widest text-slate-400 -mt-1" data-i18n="tagline">深圳华强北 · 极客直发</span>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#featured" class="hover:text-cyan-400 transition-colors" data-i18n="nav_bestseller">爆款主推</a>
+        <a href="#products" class="hover:text-cyan-400 transition-colors" data-i18n="nav_drops">10大精选新品</a>
+        <a href="#checkout" class="hover:text-cyan-400 transition-colors" data-i18n="nav_checkout">极速结账</a>
+        <a href="#shipping" class="hover:text-cyan-400 transition-colors" data-i18n="nav_logistics">物流追溯</a>
+      </nav>
+
+      <!-- Language Switcher & Cart Button -->
+      <div class="flex items-center gap-3">
+        <!-- Dual Language Segmented Control -->
+        <div class="flex items-center bg-dark-900 border border-slate-700 rounded-lg p-1 text-xs font-semibold">
+          <button id="btn-en" onclick="setLang('en')" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition-all">EN</button>
+          <button id="btn-zh" onclick="setLang('zh')" class="px-2.5 py-1 rounded bg-blue-600 text-white font-bold transition-all shadow">中文</button>
+        </div>
+
+        <a href="#checkout" class="relative flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-850 border border-slate-700 text-sm font-semibold hover:border-cyan-400 transition-all">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span data-i18n="cart">购物车</span>
+          <span class="px-1.5 py-0.5 rounded-full bg-blue-600 text-[10px] text-white font-bold">1</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-20 overflow-hidden border-b border-slate-800/80">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,240,255,0.12),rgba(255,255,255,0))]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-850 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+        <span data-i18n="hero_badge">零中间商溢价 · 华强北创客直发</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.1] max-w-4xl mx-auto mb-6">
+        <span data-i18n="hero_title_1">次世代随身 EDC 硬件</span><br>
+        <span class="cyber-gradient-text" data-i18n="hero_title_2">为极客与未来生活定制</span>
+      </h1>
+      <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero_subtitle">高溢价美学硬件、ChatGPT 深度整合设备与轻量化 EDC 工具。从全球电子硬件之都直发美欧，7–10 个工作日妥投。</p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#featured" class="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm tracking-wide shadow-lg neon-glow hover:scale-105 transition-all" data-i18n="hero_cta_order">立即抢购今日特惠 →</a>
+        <a href="#products" class="px-8 py-4 rounded-xl bg-dark-850 border border-slate-700 text-slate-200 font-semibold text-sm hover:border-slate-500 transition-all" data-i18n="hero_cta_view">浏览全套 10 款爆品</a>
+      </div>
+
+      <!-- Trust Badges Strip -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-10 border-t border-slate-800">
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">✈️</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_1_title">7-10 天专线直达</div><div class="text-[11px] text-slate-400" data-i18n="trust_1_desc">云途 / 递四方专线挂号</div></div>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">🔒</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_2_title">256-Bit SSL 加密</div><div class="text-[11px] text-slate-400" data-i18n="trust_2_desc">Stripe 与 PayPal 官方认证</div></div>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">🛡️</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_3_title">30 天无忧退换</div><div class="text-[11px] text-slate-400" data-i18n="trust_3_desc">品质问题直接换新退款</div></div>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">⭐</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_4_title">4.9/5 真实好评</div><div class="text-[11px] text-slate-400" data-i18n="trust_4_desc">全球 1,200+ 极客用户信赖</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Spotlight Hero Product -->
+  <section id="featured" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400" data-i18n="spotlight_badge">本周销量冠军</span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white" data-i18n="spotlight_heading">主推 AI 智能随身硬件</h2>
+      </div>
+      <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold" data-i18n="stock_warning">今日现货仅剩 14 台</span>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <!-- Product Visual Showcase -->
+      <div class="lg:col-span-6 flex flex-col items-center justify-center bg-dark-950/60 rounded-xl p-8 border border-slate-800">
+        <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-gradient-to-tr from-dark-900 to-slate-800 border border-slate-700 flex flex-col items-center justify-center relative shadow-2xl">
+          <div class="absolute top-4 right-4 bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[10px] font-mono px-2 py-1 rounded">MagSafe 15W</div>
+          <span class="text-7xl mb-4">🎙️</span>
+          <div class="font-display font-bold text-lg text-white" data-i18n="p1_name">AI 智能语音录音卡</div>
+          <div class="text-xs text-slate-400 mt-1" data-i18n="p1_sub">0.3cm 极致轻薄 · 航空铝合金拉丝</div>
+        </div>
+        <div class="mt-4 flex gap-3 text-xs text-slate-400">
+          <span class="px-2.5 py-1 bg-dark-850 rounded border border-slate-700">64GB Storage</span>
+          <span class="px-2.5 py-1 bg-dark-850 rounded border border-slate-700">30h Continuous Rec</span>
+          <span class="px-2.5 py-1 bg-dark-850 rounded border border-slate-700">Dual Mics</span>
+        </div>
+      </div>
+
+      <!-- Buy Box Details -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="flex items-center gap-2">
+          <div class="flex text-amber-400 text-sm">★★★★★</div>
+          <span class="text-xs text-slate-400 font-medium" data-i18n="spotlight_reviews">4.9 (184 条海外真实评测)</span>
+          <span class="text-emerald-400 text-xs font-semibold ml-2" data-i18n="spotlight_dispatch">● 24 小时内发出</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-4xl font-display font-extrabold text-white leading-snug" data-i18n="spotlight_title">磁吸 AI 录音卡与智能会议纪要神器</h3>
+
+        <div class="flex items-baseline gap-4">
+          <span class="text-3xl sm:text-4xl font-black text-white">$49.99</span>
+          <span class="text-lg text-slate-500 line-through">$89.99</span>
+          <span class="px-2.5 py-0.5 rounded bg-red-500 text-white font-bold text-xs uppercase" data-i18n="discount_tag">立省 44%</span>
+        </div>
+
+        <ul class="space-y-3 text-sm text-slate-300 pt-2 border-t border-slate-800">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="spotlight_bullet_1"><strong>一键 ChatGPT 会议总结：</strong> 手机 App 自动声纹分离、生成会议结构化纪要与思维导图。</strong> Instant auto-transcription with speaker separation and structured action items via mobile app.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="spotlight_bullet_2"><strong>MagSafe 极简磁吸形态：</strong> 银行卡般轻薄尺寸，一贴即吸在 iPhone 背面，或随身放进钱包。</strong> Credit card profile effortlessly snaps to iPhones or slips directly into everyday wallets.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="spotlight_bullet_3"><strong>双 MEMS 硬件级降噪：</strong> 10 米远距离清晰拾音，即使嘈杂咖啡厅或发布会现场依然字字清晰。</strong> Crystal-clear voice recording up to 10 meters away even in busy conference rooms.</span>
+          </li>
+        </ul>
+
+        <div class="p-4 rounded-xl bg-dark-850/80 border border-slate-700 flex items-center justify-between">
+          <div class="text-xs text-slate-300">
+            <div class="font-bold text-white" data-i18n="flash_box_title">⚡ 限时特惠锁定中</div>
+            <div data-i18n="flash_box_desc">特惠价格与库存锁定仅剩 12 分钟</div>
+          </div>
+          <div class="font-mono text-cyan-400 font-bold text-sm">11:48</div>
+        </div>
+
+        <div class="space-y-3 pt-2">
+          <a href="#checkout" class="block w-full py-4 rounded-xl text-center bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-sm uppercase tracking-wider shadow-lg hover:opacity-95 transition-all" data-i18n="spotlight_buy_btn">立即购买 — $49.99 (包含国际空运专线)</a>
+          <div class="text-center text-xs text-slate-400" data-i18n="payment_guarantee">安全支付保障：支持 <strong>Stripe · 信用卡 · Apple Pay · PayPal</strong></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 Curated Products Grid -->
+  <section id="products" class="py-20 bg-dark-900/60 border-t border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400" data-i18n="catalog_badge">华强北供应链爆款目录</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white mt-2" data-i18n="catalog_title">10 款精选“小而美”出海单品</h2>
+        <p class="text-slate-400 text-sm mt-3" data-i18n="catalog_subtitle">高毛利、超轻重量 (<300g)、高视觉冲击力，为海外创客、科技博主与数码玩家量身打造。</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Product 1 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[11px] font-semibold" data-i18n="p1_cat">AI 智能硬件</span>
+              <span class="text-xs text-slate-400 font-mono">01/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/01-ai-voice-recorder.jpg" alt="AI Voice Recorder Card" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p1_name">AI 智能语音录音卡</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p1_desc">支持 MagSafe 磁吸，ChatGPT 深度整合自动转写会议纪要与思维导图。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$49.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$89.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-400 text-[11px] font-semibold" data-i18n="p2_cat">复古情怀掌机</span>
+              <span class="text-xs text-slate-400 font-mono">02/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/02-retro-gaming-console.jpg" alt="Retro Gaming Console" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p2_name">开源便携复古游戏掌机</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p2_desc">IPS 高清视网膜屏，开源 Linux 系统，预装 10,000+ 经典复古街机大作。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$49.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$79.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold" data-i18n="p3_cat">办公与学习神器</span>
+              <span class="text-xs text-slate-400 font-mono">03/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/03-pocket-thermal-printer.jpg" alt="Pocket Thermal Printer" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p3_name">迷你口袋热敏无墨打印机</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p3_desc">免墨水设计，蓝牙直连手机，一键打印手账贴纸、标签与随身备忘。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$29.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$49.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-semibold" data-i18n="p4_cat">随身 EDC 装备</span>
+              <span class="text-xs text-slate-400 font-mono">04/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/04-titanium-mini-flashlight.jpg" alt="Titanium Flashlight" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p4_name">钛合金 1000 流明迷你手电</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p4_desc">指甲盖大小爆发千流明强光，航空钛合金机身，带 UV 防伪检测与磁吸底座。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$34.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$59.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[11px] font-semibold" data-i18n="p5_cat">桌面美学 SETUP</span>
+              <span class="text-xs text-slate-400 font-mono">05/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/05-cyberpunk-oled-clock.jpg" alt="Cyberpunk OLED Clock" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p5_name">赛博朋克 OLED 桌面智能时钟</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p5_desc">实时同步加密货币股价、天气、YouTube 粉丝计数与 PC 硬件运行参数。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$69.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$109.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-pink-500/10 border border-pink-500/30 text-pink-400 text-[11px] font-semibold" data-i18n="p6_cat">萌宠智能科技</span>
+              <span class="text-xs text-slate-400 font-mono">06/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/06-pet-gps-laser-collar.jpg" alt="Pet GPS Laser Collar" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p6_name">智能宠物 GPS 定位与激光逗宠项圈</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p6_desc">零月租超轻 GPS 追踪项圈，自带自动红外激光智能逗猫陪伴模式。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$24.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$39.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-rose-500/10 border border-rose-500/30 text-rose-400 text-[11px] font-semibold" data-i18n="p7_cat">户外运动 VLOG</span>
+              <span class="text-xs text-slate-400 font-mono">07/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/07-wearable-4k-bodycam.jpg" alt="Wearable 4K Body Cam" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p7_name">磁吸微型可穿戴 4K 记录相机</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p7_desc">拇指相机大小，强力磁吸穿戴，六轴陀螺仪防抖，骑行与日常防身记录首选。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$59.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$99.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-[11px] font-semibold" data-i18n="p8_cat">声学与运动装备</span>
+              <span class="text-xs text-slate-400 font-mono">08/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/08-bone-conduction-sunglasses.jpg" alt="Bone Conduction Sunglasses" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p8_name">骨传导智能音频太阳镜</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p8_desc">UV400 偏光太阳镜融合开放式骨传导扬声器，户外跑步、开车通话两不误。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$49.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$79.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-lime-500/10 border border-lime-500/30 text-lime-400 text-[11px] font-semibold" data-i18n="p9_cat">车载汽修 DIY</span>
+              <span class="text-xs text-slate-400 font-mono">09/10</span>
+            </div>
+            <div class="h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800"><img src="assets/images/products/09-obd2-hud-projector.jpg" alt="OBD2 HUD Scanner" class="w-full h-full object-cover"></div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p9_name">便携 OBD2 蓝牙检测仪与 HUD 投影</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p9_desc">即插即用汽车 OBD 故障码自检神器，支持前挡风玻璃抬头车速水温投影。</p>
+          </div>
+          <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$29.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$49.99</span>
+            </div>
+            <a href="#checkout" class="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">加入购物车</a>
+          </div>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all sm:col-span-2 lg:col-span-3">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-5 h-56 bg-dark-950 rounded-lg overflow-hidden border border-slate-800"><img src="assets/images/products/10-electric-screwdriver-kit.jpg" alt="Electric Screwdriver Kit" class="w-full h-full object-cover"></div>
+            <div class="md:col-span-8">
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2.5 py-1 rounded bg-teal-500/10 border border-teal-500/30 text-teal-400 text-[11px] font-semibold" data-i18n="p10_cat">极客创客工具</span>
+                <span class="text-xs text-slate-400 font-mono" data-i18n="p10_badge">10/10 压轴特惠套装</span>
+              </div>
+              <h4 class="font-display font-bold text-xl text-white" data-i18n="p10_name">智能数显电动精细螺丝刀与便携焊台</h4>
+              <p class="text-xs text-slate-400 mt-2" data-i18n="p10_desc">数显无级扭矩调节，环形无影 LED 补光，标配 64 颗 S2 合金钢高硬度精密批头，专为手机维修与无人机 DIY 设计。</p>
+              <div class="mt-4 flex items-center justify-between">
+                <div>
+                  <span class="text-xl font-bold text-white">$49.99</span>
+                  <span class="text-xs text-slate-500 line-through ml-2">$79.99</span>
+                </div>
+                <a href="#checkout" class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="p10_cta">抢购创客套件</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- One-Page Fast Checkout Section -->
+  <section id="checkout" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-cyan-400" data-i18n="chk_badge">欧美优化型单页极速结账</span>
+      <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1" data-i18n="chk_title">订单核对与安全结算</h2>
+      <p class="text-slate-400 text-xs mt-2" data-i18n="chk_subtitle">剔除冗余多余字段，最快 30 秒完成下单，大幅降低弃单率。</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Form -->
+      <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div>
+          <h3 class="text-base font-display font-bold text-white flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center">1</span>
+            <span data-i18n="chk_step1">1. 收货信息 (支持 17TRACK 实时追踪)</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_email_lbl">接收物流追踪通知的邮箱</label>
+              <input type="email" value="alex.engineer@example.com" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_fname_lbl">名字 (First Name)</label>
+              <input type="text" value="Alex" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_lname_lbl">姓氏 (Last Name)</label>
+              <input type="text" value="Smith" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_addr_lbl">详细地址 (Street Address)</label>
+              <input type="text" value="742 Evergreen Terrace" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_city_lbl">城市 (City)</label>
+              <input type="text" value="Springfield" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_zip_lbl">州 / 邮政编码 (State / Zip)</label>
+              <input type="text" value="OR 97477" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none">
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-800">
+          <h3 class="text-base font-display font-bold text-white flex items-center gap-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center">2</span>
+            <span data-i18n="chk_step2">2. 安全加密支付渠道</span>
+          </h3>
+          <div class="p-4 rounded-xl bg-dark-950 border border-cyan-500/40 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💳</span>
+              <div>
+                <div class="text-sm font-bold text-white" data-i18n="chk_stripe_lbl">Stripe 国际信用卡直付</div>
+                <div class="text-xs text-slate-400" data-i18n="chk_stripe_sub">支持 Visa、Mastercard、Apple Pay、PayPal 等</div>
+              </div>
+            </div>
+            <span class="text-xs text-cyan-400 font-mono">256-Bit SSL</span>
+          </div>
+        </div>
+
+        <button class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-sm uppercase tracking-wider shadow-xl hover:opacity-95 transition-all" data-i18n="chk_submit_btn">立即完成订单 ($49.99) →</button>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 space-y-5">
+        <h3 class="text-base font-display font-bold text-white pb-3 border-b border-slate-800" data-i18n="summary_title">订单明细</h3>
+        <div class="flex items-center justify-between text-sm">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/products/01-ai-voice-recorder.jpg" alt="AI Voice Recorder Card" class="w-12 h-12 rounded-lg object-cover border border-slate-800 shrink-0">
+            <div>
+              <div class="font-semibold text-white" data-i18n="p1_name">AI 智能语音录音卡</div>
+              <div class="text-xs text-slate-400" data-i18n="summary_item_sub">数量: 1 · 暗夜钛合金色</div>
+            </div>
+          </div>
+          <span class="font-bold text-white">$49.99</span>
+        </div>
+
+        <div class="space-y-2 pt-3 border-t border-slate-800 text-xs text-slate-400">
+          <div class="flex justify-between">
+            <span data-i18n="summary_subtotal">商品小计</span>
+            <span class="text-white">$49.99</span>
+          </div>
+          <div class="flex justify-between">
+            <span data-i18n="summary_shipping">欧美特快空运专线 (7-10 天)</span>
+            <span class="text-emerald-400 font-semibold" data-i18n="summary_free">限时包邮</span>
+          </div>
+          <div class="flex justify-between text-sm font-bold text-white pt-2 border-t border-slate-800">
+            <span data-i18n="summary_total">实付总额</span>
+            <span class="text-cyan-400 text-lg">$49.99</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-300 flex items-start gap-3">
+          <span class="text-lg">🛡️</span>
+          <div data-i18n="summary_guarantee"><strong>30 天零风险退换保障：</strong> 若对硬件做工或软件功能有任何不满意，支持直接申请退换货或全额退款。</strong> If you're not completely impressed by build quality or software features, receive a replacement or full refund.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer id="shipping" class="bg-dark-950 border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <div class="font-display font-bold text-white text-lg mb-3">NEXUS<span class="text-cyan-400">TECH</span></div>
+        <p class="leading-relaxed text-slate-400" data-i18n="footer_about">总部位于中国深圳华强北的跨境 D2C 直发供应链中心，将全球领先的微硬件与创客科技直连欧美消费者。</p>
+      </div>
+      <div>
+        <div class="font-bold text-white uppercase tracking-wider mb-3" data-i18n="footer_support_title">客户与物流服务</div>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_track">包裹实时查询 (17TRACK)</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_shipping_terms">国际配送政策 (7-10 工作日)</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_return_form">30 天无理由退换货指南</a></li>
+          <li><a href="#" class="hover:text-cyan-400">support@nexustech-store.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white uppercase tracking-wider mb-3" data-i18n="footer_legal_title">合规与政策 (Stripe/PayPal审核)</div>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_privacy">隐私政策 (GDPR / CCPA)</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_tos">服务条款</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_warranty">售后质保服务保障</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_dispatch">深圳总仓直发声明</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white uppercase tracking-wider mb-3" data-i18n="footer_newsletter_title">创客内测特惠</div>
+        <p class="mb-3" data-i18n="footer_newsletter_desc">第一时间获取尚未公开发售的华强北黑科技硬件情报。</p>
+        <div class="flex">
+          <input type="email" placeholder="Your developer email" class="w-full bg-dark-900 border border-slate-700 rounded-l-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400">
+          <button class="bg-blue-600 px-3 py-2 rounded-r-lg text-white font-bold hover:bg-blue-500" data-i18n="footer_join">订阅</button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-900 text-center text-slate-600" data-i18n="copyright">&copy; 2026 NEXUS TECH Store. 基于 Tailwind CSS 与 WooCommerce 跨境电商标准开发。保留所有权利。</div>
+  </footer>
+
+  <!-- Internationalization (i18n) Engine -->
+  <script>
+    const translations = {
+      en: {
+        announcement: "FLASH SALE: 7-DAY EXPRESS AIR SHIPPING FREE ON ORDERS OVER $49 · DIRECT FROM HARDWARE HUB",
+        tagline: "Shenzhen EDC Direct",
+        nav_bestseller: "Best Seller",
+        nav_drops: "10 Curated Drops",
+        nav_checkout: "Express Checkout",
+        nav_logistics: "Logistics & Tracking",
+        cart: "Cart",
+        hero_badge: "Zero Middlemen · Straight from Huaqiangbei Labs",
+        hero_title_1: "Everyday Carry Gadgets.",
+        hero_title_2: "Engineered for Tomorrow.",
+        hero_subtitle: "High-ticket aesthetic tech, ChatGPT-integrated hardware, and ultra-durable EDC tools. Delivered directly from the world's silicon capital to US & EU in 7–10 days.",
+        hero_cta_order: "ORDER TODAY'S DROP →",
+        hero_cta_view: "View All 10 Gadgets",
+        trust_1_title: "7-10 Days Express",
+        trust_1_desc: "YunExpress / 4PX Line",
+        trust_2_title: "256-Bit SSL Checkout",
+        trust_2_desc: "Stripe & PayPal Verified",
+        trust_3_title: "30-Day Guarantee",
+        trust_3_desc: "Hassle-free replacement",
+        trust_4_title: "4.9/5 Rating",
+        trust_4_desc: "Over 1,200+ Global Orders",
+        spotlight_badge: "Weekly Top Performer",
+        spotlight_heading: "Spotlight AI EDC Gadget",
+        stock_warning: "Only 14 Units Left In Stock",
+        p1_name: "AI Voice Recorder Card",
+        p1_sub: "Ultra-Slim 0.12\" Brushed Aluminium",
+        spotlight_reviews: "4.9 (184 Verified Reviews)",
+        spotlight_dispatch: "● Ships Tomorrow",
+        spotlight_title: "Magnetic AI Voice Recorder & Smart Meeting Transcriber",
+        discount_tag: "Save 44%",
+        spotlight_bullet_1: "<strong>One-Tap ChatGPT Summaries:</strong> Instant auto-transcription with speaker separation and structured action items via mobile app.",
+        spotlight_bullet_2: "<strong>Snap & Go MagSafe Form Factor:</strong> Credit card profile effortlessly snaps to iPhones or slips directly into everyday wallets.",
+        spotlight_bullet_3: "<strong>Dual MEMS Noise Reduction:</strong> Crystal-clear voice recording up to 10 meters away even in busy conference rooms.",
+        flash_box_title: "⚡ Flash Allocation Active",
+        flash_box_desc: "Promotional discount locks for another 12 minutes",
+        spotlight_buy_btn: "CLAIM NOW — $49.99 (EXPRESS SHIPPING INCLUDED)",
+        payment_guarantee: "Guaranteed safe checkout with <strong>Stripe · Visa · Apple Pay · PayPal</strong>",
+        catalog_badge: "Huaqiangbei Direct Catalog",
+        catalog_title: "10 Small & Beautiful Outbound Bestsellers",
+        catalog_subtitle: "High margin, lightweight (<300g), high perceived value, and tailored for international creators & tech lovers.",
+        add_to_cart: "Add to Cart",
+        p1_cat: "AI HARDWARE",
+        p1_desc: "MagSafe card recorder with ChatGPT automated notes, mind mapping & voice separation.",
+        p2_cat: "RETRO GAMING",
+        p2_name: "Open-Source Retro Gaming Console",
+        p2_desc: "IPS display, Linux open system, preloaded with 10,000+ classic arcade titles.",
+        p3_cat: "OFFICE & STUDY",
+        p3_name: "Mini Pocket Thermal Printer",
+        p3_desc: "Zero ink required. Bluetooth connects to iOS/Android for instant labels, receipts & journal art.",
+        p4_cat: "EDC ESSENTIAL",
+        p4_name: "Mini Titanium 1000LM Flashlight",
+        p4_desc: "Thumb-size aerospace titanium body with UV detection & magnetic base mount.",
+        p5_cat: "DESK SETUP",
+        p5_name: "Cyberpunk OLED Smart Desk Clock",
+        p5_desc: "Real-time Crypto ticker, live weather, YouTube subscriber tracker & PC hardware dashboard.",
+        p6_cat: "PET GADGET",
+        p6_name: "Smart Pet GPS & Laser Collar",
+        p6_desc: "Zero-subscription GPS tracking collar equipped with automatic interactive laser entertainment.",
+        p7_cat: "ACTION VLOG",
+        p7_name: "Magnetic Wearable 4K Body Cam",
+        p7_desc: "Ultra-light snap camera with gyro stabilization for cycling, travel blogs, and security footage.",
+        p8_cat: "AUDIO & SPORT",
+        p8_name: "Bone Conduction Audio Sunglasses",
+        p8_desc: "Polarized UV400 lenses with open-ear bone conduction transducers for running and driving.",
+        p9_cat: "AUTOMOTIVE",
+        p9_name: "Mini OBD2 Scanner & HUD Projector",
+        p9_desc: "Direct plug OBD engine diagnostics with windshield head-up speed and alert display.",
+        p10_cat: "MAKER & HARDWARE",
+        p10_badge: "10/10 SPECIAL BUNDLE",
+        p10_name: "Smart Precision Electric Screwdriver & Solder Kit",
+        p10_desc: "Adjustable digital torque control, shadowless LED ring, and 64 S2 steel bits. Engineered for phone repair, drone assembly, and electronics prototyping.",
+        p10_cta: "Grab Maker Kit",
+        chk_badge: "Streamlined 1-Page Checkout",
+        chk_title: "Order Review & Secure Settlement",
+        chk_subtitle: "Optimized form fields without redundant inputs for maximum completion speed.",
+        chk_step1: "Express Shipping Destination",
+        chk_email_lbl: "Email for 17TRACK Tracking Updates",
+        chk_fname_lbl: "First Name",
+        chk_lname_lbl: "Last Name",
+        chk_addr_lbl: "Delivery Address",
+        chk_city_lbl: "City",
+        chk_zip_lbl: "State / Zip Code",
+        chk_step2: "Encrypted Payment",
+        chk_stripe_lbl: "Stripe Card Payment",
+        chk_stripe_sub: "Visa, Mastercard, Apple Pay, PayPal accepted",
+        chk_submit_btn: "COMPLETE TRANSACTION ($49.99) →",
+        summary_title: "Order Summary",
+        summary_item_sub: "Qty: 1 · Midnight Titanium",
+        summary_subtotal: "Subtotal",
+        summary_shipping: "Direct Air Line (7-10 Days)",
+        summary_free: "FREE (Flash Deal)",
+        summary_total: "Total Amount",
+        summary_guarantee: "<strong>30-Day Zero-Risk Return Policy:</strong> If you're not completely impressed by build quality or software features, receive a replacement or full refund.",
+        footer_about: "Direct-to-consumer hardware supply hub based in Huaqiangbei, Shenzhen. Connecting next-gen electronic engineering with global makers.",
+        footer_support_title: "Order Support",
+        footer_track: "Track Parcel (17TRACK Integration)",
+        footer_shipping_terms: "Shipping Terms (7-10 Work Days)",
+        footer_return_form: "30-Day Return & Exchange Form",
+        footer_legal_title: "Legal & Compliance",
+        footer_privacy: "Privacy Policy (GDPR / CCPA)",
+        footer_tos: "Terms of Service",
+        footer_warranty: "Refund & Warranty Protection",
+        footer_dispatch: "Shenzhen HQ Dispatch Hub",
+        footer_newsletter_title: "VIP Hardware Drops",
+        footer_newsletter_desc: "Get notified about unreleased micro-controllers & EDC tools.",
+        footer_join: "JOIN",
+        copyright: "&copy; 2026 NEXUS TECH Store. Built with Tailwind CSS & WooCommerce Architecture. All Rights Reserved."
+      },
+      zh: {
+        announcement: "限时闪购：满 $49 享欧美 7 天特快专线包邮 · 华强北源头直发",
+        tagline: "深圳华强北 · 极客直发",
+        nav_bestseller: "爆款主推",
+        nav_drops: "10大精选新品",
+        nav_checkout: "极速结账",
+        nav_logistics: "物流追溯",
+        cart: "购物车",
+        hero_badge: "零中间商溢价 · 华强北创客直发",
+        hero_title_1: "次世代随身 EDC 硬件",
+        hero_title_2: "为极客与未来生活定制",
+        hero_subtitle: "高溢价美学硬件、ChatGPT 深度整合设备与轻量化 EDC 工具。从全球电子硬件之都直发美欧，7–10 个工作日妥投。",
+        hero_cta_order: "立即抢购今日特惠 →",
+        hero_cta_view: "浏览全套 10 款爆品",
+        trust_1_title: "7-10 天专线直达",
+        trust_1_desc: "云途 / 递四方专线挂号",
+        trust_2_title: "256-Bit SSL 加密",
+        trust_2_desc: "Stripe 与 PayPal 官方认证",
+        trust_3_title: "30 天无忧退换",
+        trust_3_desc: "品质问题直接换新退款",
+        trust_4_title: "4.9/5 真实好评",
+        trust_4_desc: "全球 1,200+ 极客用户信赖",
+        spotlight_badge: "本周销量冠军",
+        spotlight_heading: "主推 AI 智能随身硬件",
+        stock_warning: "今日现货仅剩 14 台",
+        p1_name: "AI 智能语音录音卡",
+        p1_sub: "0.3cm 极致轻薄 · 航空铝合金拉丝",
+        spotlight_reviews: "4.9 (184 条海外真实评测)",
+        spotlight_dispatch: "● 24 小时内发出",
+        spotlight_title: "磁吸 AI 录音卡与智能会议纪要神器",
+        discount_tag: "立省 44%",
+        spotlight_bullet_1: "<strong>一键 ChatGPT 会议总结：</strong> 手机 App 自动声纹分离、生成会议结构化纪要与思维导图。",
+        spotlight_bullet_2: "<strong>MagSafe 极简磁吸形态：</strong> 银行卡般轻薄尺寸，一贴即吸在 iPhone 背面，或随身放进钱包。",
+        spotlight_bullet_3: "<strong>双 MEMS 硬件级降噪：</strong> 10 米远距离清晰拾音，即使嘈杂咖啡厅或发布会现场依然字字清晰。",
+        flash_box_title: "⚡ 限时特惠锁定中",
+        flash_box_desc: "特惠价格与库存锁定仅剩 12 分钟",
+        spotlight_buy_btn: "立即购买 — $49.99 (包含国际空运专线)",
+        payment_guarantee: "安全支付保障：支持 <strong>Stripe · 信用卡 · Apple Pay · PayPal</strong>",
+        catalog_badge: "华强北供应链爆款目录",
+        catalog_title: "10 款精选“小而美”出海单品",
+        catalog_subtitle: "高毛利、超轻重量 (<300g)、高视觉冲击力，为海外创客、科技博主与数码玩家量身打造。",
+        add_to_cart: "加入购物车",
+        p1_cat: "AI 智能硬件",
+        p1_desc: "支持 MagSafe 磁吸，ChatGPT 深度整合自动转写会议纪要与思维导图。",
+        p2_cat: "复古情怀掌机",
+        p2_name: "开源便携复古游戏掌机",
+        p2_desc: "IPS 高清视网膜屏，开源 Linux 系统，预装 10,000+ 经典复古街机大作。",
+        p3_cat: "办公与学习神器",
+        p3_name: "迷你口袋热敏无墨打印机",
+        p3_desc: "免墨水设计，蓝牙直连手机，一键打印手账贴纸、标签与随身备忘。",
+        p4_cat: "随身 EDC 装备",
+        p4_name: "钛合金 1000 流明迷你手电",
+        p4_desc: "指甲盖大小爆发千流明强光，航空钛合金机身，带 UV 防伪检测与磁吸底座。",
+        p5_cat: "桌面美学 SETUP",
+        p5_name: "赛博朋克 OLED 桌面智能时钟",
+        p5_desc: "实时同步加密货币股价、天气、YouTube 粉丝计数与 PC 硬件运行参数。",
+        p6_cat: "萌宠智能科技",
+        p6_name: "智能宠物 GPS 定位与激光逗宠项圈",
+        p6_desc: "零月租超轻 GPS 追踪项圈，自带自动红外激光智能逗猫陪伴模式。",
+        p7_cat: "户外运动 VLOG",
+        p7_name: "磁吸微型可穿戴 4K 记录相机",
+        p7_desc: "拇指相机大小，强力磁吸穿戴，六轴陀螺仪防抖，骑行与日常防身记录首选。",
+        p8_cat: "声学与运动装备",
+        p8_name: "骨传导智能音频太阳镜",
+        p8_desc: "UV400 偏光太阳镜融合开放式骨传导扬声器，户外跑步、开车通话两不误。",
+        p9_cat: "车载汽修 DIY",
+        p9_name: "便携 OBD2 蓝牙检测仪与 HUD 投影",
+        p9_desc: "即插即用汽车 OBD 故障码自检神器，支持前挡风玻璃抬头车速水温投影。",
+        p10_cat: "极客创客工具",
+        p10_badge: "10/10 压轴特惠套装",
+        p10_name: "智能数显电动精细螺丝刀与便携焊台",
+        p10_desc: "数显无级扭矩调节，环形无影 LED 补光，标配 64 颗 S2 合金钢高硬度精密批头，专为手机维修与无人机 DIY 设计。",
+        p10_cta: "抢购创客套件",
+        chk_badge: "欧美优化型单页极速结账",
+        chk_title: "订单核对与安全结算",
+        chk_subtitle: "剔除冗余多余字段，最快 30 秒完成下单，大幅降低弃单率。",
+        chk_step1: "1. 收货信息 (支持 17TRACK 实时追踪)",
+        chk_email_lbl: "接收物流追踪通知的邮箱",
+        chk_fname_lbl: "名字 (First Name)",
+        chk_lname_lbl: "姓氏 (Last Name)",
+        chk_addr_lbl: "详细地址 (Street Address)",
+        chk_city_lbl: "城市 (City)",
+        chk_zip_lbl: "州 / 邮政编码 (State / Zip)",
+        chk_step2: "2. 安全加密支付渠道",
+        chk_stripe_lbl: "Stripe 国际信用卡直付",
+        chk_stripe_sub: "支持 Visa、Mastercard、Apple Pay、PayPal 等",
+        chk_submit_btn: "立即完成订单 ($49.99) →",
+        summary_title: "订单明细",
+        summary_item_sub: "数量: 1 · 暗夜钛合金色",
+        summary_subtotal: "商品小计",
+        summary_shipping: "欧美特快空运专线 (7-10 天)",
+        summary_free: "限时包邮",
+        summary_total: "实付总额",
+        summary_guarantee: "<strong>30 天零风险退换保障：</strong> 若对硬件做工或软件功能有任何不满意，支持直接申请退换货或全额退款。",
+        footer_about: "总部位于中国深圳华强北的跨境 D2C 直发供应链中心，将全球领先的微硬件与创客科技直连欧美消费者。",
+        footer_support_title: "客户与物流服务",
+        footer_track: "包裹实时查询 (17TRACK)",
+        footer_shipping_terms: "国际配送政策 (7-10 工作日)",
+        footer_return_form: "30 天无理由退换货指南",
+        footer_legal_title: "合规与政策 (Stripe/PayPal审核)",
+        footer_privacy: "隐私政策 (GDPR / CCPA)",
+        footer_tos: "服务条款",
+        footer_warranty: "售后质保服务保障",
+        footer_dispatch: "深圳总仓直发声明",
+        footer_newsletter_title: "创客内测特惠",
+        footer_newsletter_desc: "第一时间获取尚未公开发售的华强北黑科技硬件情报。",
+        footer_join: "订阅",
+        copyright: "&copy; 2026 NEXUS TECH Store. 基于 Tailwind CSS 与 WooCommerce 跨境电商标准开发。保留所有权利。"
+      }
+    };
+
+    window.currentLang = 'zh';
+
+    window.setLang = function(targetLang) {
+      window.currentLang = targetLang;
+      
+      const btnEn = document.getElementById('btn-en');
+      const btnZh = document.getElementById('btn-zh');
+
+      if (btnEn && btnZh) {
+        if (targetLang === 'zh') {
+          btnZh.className = "px-2.5 py-1 rounded bg-blue-600 text-white font-bold transition-all shadow";
+          btnEn.className = "px-2.5 py-1 rounded text-slate-400 hover:text-white transition-all";
+        } else {
+          btnEn.className = "px-2.5 py-1 rounded bg-blue-600 text-white font-bold transition-all shadow";
+          btnZh.className = "px-2.5 py-1 rounded text-slate-400 hover:text-white transition-all";
+        }
+      }
+      
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[targetLang] && translations[targetLang][key] !== undefined) {
+          el.innerHTML = translations[targetLang][key];
+        }
+      });
+
+      try {
+        localStorage.setItem('nexus_lang', targetLang);
+      } catch (e) {
+        console.warn('LocalStorage unavailable in this environment:', e);
+      }
+    };
+
+    window.toggleLanguage = function() {
+      window.setLang(window.currentLang === 'en' ? 'zh' : 'en');
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const saved = localStorage.getItem('nexus_lang');
+        if (saved === 'zh') {
+          window.setLang('zh');
+        }
+      } catch (e) {}
+    });
+  </script>
+</body>
+</html>

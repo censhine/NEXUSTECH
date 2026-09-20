@@ -1,0 +1,21 @@
+{
+  "name": "nexus-tech-bilingual-store",
+  "version": "1.0.0",
+  "description": "Bilingual Cyberpunk & EDC Hardware Store direct from Shenzhen Huaqiangbei",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 server.py",
+    "dev": "python3 server.py 8080",
+    "serve:node": "npx --yes serve -l 8080 ."
+  },
+  "keywords": [
+    "cross-border",
+    "e-commerce",
+    "bilingual",
+    "tailwindcss",
+    "hardware",
+    "edc"
+  ],
+  "author": "NEXUS TECH",
+  "license": "MIT"
+}

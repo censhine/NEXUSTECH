@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS TECH | Cyberpunk & EDC Direct from Huaqiangbei</title>
+  <meta name="description" content="Direct-to-consumer hardware hub from Shenzhen Huaqiangbei. Curated EDC, AI hardware, and cyberpunk tech.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            dark: {
+              950: '#060913',
+              900: '#0b0f19',
+              850: '#111726',
+              800: '#161f33',
+              700: '#222f4c',
+            },
+            cyber: {
+              blue: '#2563eb',
+              cyan: '#00f0ff',
+              indigo: '#6366f1',
+              neon: '#10b981',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Global Smooth Color Transitions */
+    html, body, header, .glass-card, section, div, p, span, h1, h2, h3, h4, input, button {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    /* Dark Mode Defaults */
+    .glass-card {
+      background: rgba(17, 23, 38, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 240, 255, 0.4);
+      box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.18);
+    }
+    .neon-glow {
+      box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.5);
+    }
+    .cyber-gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #00f0ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-radial-bg {
+      background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(0, 240, 255, 0.12), rgba(255, 255, 255, 0));
+    }
+    .img-zoom {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .group:hover .img-zoom {
+      transform: scale(1.05);
+    }
+
+    /* ==========================================================================
+       Light Theme: "Clean Fresh Tech" (明快清新科技风)
+       Inspired by modern Apple / Nothing / Linear aesthetic:
+       Crisp white & ice-gray frost glass, high-contrast graphite typography,
+       clean blue accents, and pristine hardware card backgrounds.
+       ========================================================================== */
+    [data-theme="light"] {
+      color-scheme: light;
+    }
+    [data-theme="light"] body {
+      background-color: #f8fafc !important;
+      color: #1e293b !important;
+    }
+    [data-theme="light"] header {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      border-bottom-color: rgba(226, 232, 240, 0.9) !important;
+    }
+    [data-theme="light"] header .text-white:not(.cart-badge):not(button):not(.btn-text-white) {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] header .text-slate-400 {
+      color: #64748b !important;
+    }
+    [data-theme="light"] nav a {
+      color: #475569 !important;
+    }
+    [data-theme="light"] nav a:hover {
+      color: #2563eb !important;
+    }
+    [data-theme="light"] .theme-control-wrap {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] .theme-control-wrap .active-pill {
+      background: linear-gradient(135deg, #2563eb, #4f46e5) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(37, 99, 235, 0.4) !important;
+      box-shadow: 0 1px 4px rgba(37, 99, 235, 0.25) !important;
+    }
+    [data-theme="light"] .theme-control-wrap .active-pill * {
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .cart-btn {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    }
+    [data-theme="light"] .cart-btn:hover {
+      border-color: #2563eb !important;
+      color: #2563eb !important;
+      background-color: #ffffff !important;
+    }
+    [data-theme="light"] .cart-badge {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .hero-radial-bg {
+      background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(37, 99, 235, 0.09), rgba(248, 250, 252, 0)) !important;
+    }
+    [data-theme="light"] .hero-badge-pill {
+      background-color: #e0f2fe !important;
+      border-color: #bae6fd !important;
+      color: #0284c7 !important;
+    }
+
+    /* Primary Hero CTA: Blue Gradient Background + Pure White Text */
+    [data-theme="light"] .hero-cta-btn {
+      background: linear-gradient(135deg, #2563eb, #4f46e5) !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 4px 16px -2px rgba(37, 99, 235, 0.35) !important;
+    }
+    [data-theme="light"] .hero-cta-btn:hover {
+      background: linear-gradient(135deg, #1d4ed8, #4338ca) !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 24px -2px rgba(37, 99, 235, 0.5) !important;
+    }
+    [data-theme="light"] .hero-cta-btn * {
+      color: #ffffff !important;
+    }
+
+    /* Secondary Hero Button: Outline Style */
+    [data-theme="light"] .hero-view-btn {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    }
+    [data-theme="light"] .hero-view-btn:hover {
+      border-color: #94a3b8 !important;
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+    }
+
+    /* Spotlight Section Buttons: Blue Background + Pure White Text */
+    [data-theme="light"] .spotlight-toggle-btn {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3) !important;
+    }
+    [data-theme="light"] .spotlight-toggle-btn:hover {
+      background-color: #1d4ed8 !important;
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .spotlight-toggle-btn * {
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .spotlight-thumb {
+      background-color: #ffffff !important;
+    }
+    [data-theme="light"] .spotlight-buy-btn {
+      background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #06b6d4 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 6px 20px -2px rgba(37, 99, 235, 0.35) !important;
+    }
+    [data-theme="light"] .spotlight-buy-btn:hover {
+      opacity: 0.95 !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.45) !important;
+    }
+    [data-theme="light"] .spotlight-buy-btn * {
+      color: #ffffff !important;
+    }
+
+    /* Curated Drops "Add to Cart" Buttons: Blue Background + Pure White Text */
+    [data-theme="light"] .add-to-cart-btn {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25) !important;
+    }
+    [data-theme="light"] .add-to-cart-btn:hover {
+      background-color: #1d4ed8 !important;
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .add-to-cart-btn * {
+      color: #ffffff !important;
+    }
+
+    /* Product 10 Grab Maker Kit Button: Blue Background + Pure White Text */
+    [data-theme="light"] .maker-kit-btn {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+    }
+    [data-theme="light"] .maker-kit-btn:hover {
+      background-color: #1d4ed8 !important;
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .maker-kit-btn * {
+      color: #ffffff !important;
+    }
+
+    /* Checkout Submit Button: Blue/Indigo/Cyan Gradient + Pure White Text */
+    [data-theme="light"] .checkout-submit-btn {
+      background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #06b6d4 100%) !important;
+      color: #ffffff !important;
+      border: none !important;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35) !important;
+    }
+    [data-theme="light"] .checkout-submit-btn:hover {
+      opacity: 0.95 !important;
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .checkout-submit-btn * {
+      color: #ffffff !important;
+    }
+
+    /* Footer Join Button: Blue Background + Pure White Text */
+    [data-theme="light"] .footer-join-btn {
+      background-color: #2563eb !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+    [data-theme="light"] .footer-join-btn:hover {
+      background-color: #1d4ed8 !important;
+      color: #ffffff !important;
+    }
+    [data-theme="light"] .footer-join-btn * {
+      color: #ffffff !important;
+    }
+    [data-theme="light"] h1, 
+    [data-theme="light"] h2, 
+    [data-theme="light"] h3, 
+    [data-theme="light"] h4 {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .cyber-gradient-text {
+      background: linear-gradient(135deg, #0f172a 20%, #2563eb 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+    [data-theme="light"] p {
+      color: #475569 !important;
+    }
+    [data-theme="light"] .trust-strip {
+      border-top-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .trust-strip .text-white {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .trust-strip .text-slate-400 {
+      color: #64748b !important;
+    }
+    [data-theme="light"] .glass-card {
+      background: rgba(255, 255, 255, 0.92) !important;
+      border-color: rgba(226, 232, 240, 0.95) !important;
+      box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05) !important;
+    }
+    [data-theme="light"] .glass-card:hover {
+      border-color: rgba(37, 99, 235, 0.4) !important;
+      box-shadow: 0 16px 36px -8px rgba(37, 99, 235, 0.12) !important;
+    }
+    [data-theme="light"] .spotlight-showcase-wrap {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .spotlight-img-frame {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08) !important;
+    }
+    [data-theme="light"] .spotlight-img-caption {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06) !important;
+    }
+    [data-theme="light"] .spotlight-img-caption > div > .text-white {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .spotlight-pill {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #475569 !important;
+    }
+    [data-theme="light"] #featured h2.text-white,
+    [data-theme="light"] #featured h3.text-white,
+    [data-theme="light"] #featured h4.text-white,
+    [data-theme="light"] #featured .text-white:not(button):not(a):not(.spotlight-toggle-btn):not(.spotlight-buy-btn) {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] #featured ul {
+      border-top-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #featured li {
+      color: #334155 !important;
+    }
+    [data-theme="light"] .flash-box {
+      background-color: #f8fafc !important;
+      border-color: #cbd5e1 !important;
+    }
+    [data-theme="light"] .flash-box .text-white {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .flash-box .text-slate-300 {
+      color: #475569 !important;
+    }
+    [data-theme="light"] #products {
+      background-color: #f1f5f9 !important;
+      border-top-color: #e2e8f0 !important;
+      border-bottom-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .product-img-wrap {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .product-card-footer {
+      border-top-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .product-card-footer span.text-white {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .product-10-pill {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+      color: #475569 !important;
+    }
+    [data-theme="light"] #checkout form {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] #checkout input {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] #checkout input:focus {
+      border-color: #2563eb !important;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+    }
+    [data-theme="light"] #checkout label {
+      color: #475569 !important;
+    }
+    [data-theme="light"] .checkout-divider {
+      border-top-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .stripe-box {
+      background-color: #f8fafc !important;
+      border-color: #93c5fd !important;
+    }
+    [data-theme="light"] .stripe-box .text-white {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .order-summary-card {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .order-summary-card .border-slate-800 {
+      border-color: #e2e8f0 !important;
+    }
+    [data-theme="light"] .order-summary-card .text-white {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .guarantee-box {
+      background-color: #ecfdf5 !important;
+      border-color: #a7f3d0 !important;
+      color: #065f46 !important;
+    }
+    [data-theme="light"] footer {
+      background-color: #f1f5f9 !important;
+      border-top-color: #e2e8f0 !important;
+      color: #64748b !important;
+    }
+    [data-theme="light"] footer .text-white:not(button):not(.footer-join-btn) {
+      color: #0f172a !important;
+    }
+    [data-theme="light"] footer a {
+      color: #64748b !important;
+    }
+    [data-theme="light"] footer a:hover {
+      color: #2563eb !important;
+    }
+    [data-theme="light"] footer input {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] footer .border-slate-900 {
+      border-top-color: #e2e8f0 !important;
+      color: #94a3b8 !important;
+    }
+  </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-500 text-white text-xs font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 shadow-sm">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    <span data-i18n="announcement">FLASH SALE: 7-DAY EXPRESS AIR SHIPPING FREE ON ORDERS OVER $49 · DIRECT FROM HARDWARE HUB</span>
+  </div>
+
+  <!-- Modern Navigation Header -->
+  <header class="sticky top-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center font-display font-black text-xl text-black shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          N
+        </div>
+        <div>
+          <span class="font-display text-2xl font-bold tracking-tight text-white">NEXUS<span class="text-cyan-400">TECH</span></span>
+          <span class="block text-[10px] uppercase font-mono tracking-widest text-slate-400 -mt-1" data-i18n="tagline">Shenzhen EDC Direct</span>
+        </div>
+      </a>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#featured" class="hover:text-cyan-400 transition-colors" data-i18n="nav_bestseller">Best Seller</a>
+        <a href="#products" class="hover:text-cyan-400 transition-colors" data-i18n="nav_drops">10 Curated Drops</a>
+        <a href="#checkout" class="hover:text-cyan-400 transition-colors" data-i18n="nav_checkout">Express Checkout</a>
+        <a href="#shipping" class="hover:text-cyan-400 transition-colors" data-i18n="nav_logistics">Logistics & Tracking</a>
+      </nav>
+
+      <!-- Language & Theme Switchers & Cart Button -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <!-- Theme Switcher Segmented Control (Cyber Dark vs Fresh Clean Tech) -->
+        <div class="flex items-center bg-dark-900 border border-slate-700 rounded-lg p-1 text-xs font-semibold shadow-inner theme-control-wrap">
+          <button id="btn-theme-dark" onclick="setTheme('dark')" class="flex items-center gap-1 px-2.5 py-1 rounded bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-md shadow-cyan-500/20 transition-all" title="Cyber Dark Mode">
+            <span>🌙</span>
+            <span class="hidden sm:inline" data-i18n="theme_dark">Dark</span>
+          </button>
+          <button id="btn-theme-light" onclick="setTheme('light')" class="flex items-center gap-1 px-2.5 py-1 rounded text-slate-400 hover:text-white transition-all" title="Fresh Clean Tech Mode">
+            <span>☀️</span>
+            <span class="hidden sm:inline" data-i18n="theme_light">Fresh</span>
+          </button>
+        </div>
+
+        <!-- Dual Language Segmented Control -->
+        <div class="flex items-center bg-dark-900 border border-slate-700 rounded-lg p-1 text-xs font-semibold shadow-inner theme-control-wrap">
+          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-2.5 py-1 rounded bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold shadow-md shadow-cyan-500/20 transition-all">EN</button>
+          <button id="btn-lang-zh" onclick="setLanguage('zh')" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition-all">中文</button>
+        </div>
+
+        <!-- Cart Quick Link -->
+        <a href="#checkout" class="cart-btn relative flex items-center gap-2 px-3.5 py-2 rounded-lg bg-dark-850 border border-slate-700 text-sm font-semibold hover:border-cyan-400 transition-all">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <span class="hidden sm:inline" data-i18n="cart">Cart</span>
+          <span class="cart-badge px-1.5 py-0.5 rounded-full bg-blue-600 text-[10px] text-white font-bold">1</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-20 overflow-hidden border-b border-slate-800/80">
+    <div class="absolute inset-0 hero-radial-bg"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="hero-badge-pill inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-850 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-wider mb-6 shadow-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span data-i18n="hero_badge">Zero Middlemen · Straight from Huaqiangbei Labs</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-[1.1] max-w-4xl mx-auto mb-6">
+        <span data-i18n="hero_title_1">Everyday Carry Gadgets.</span><br>
+        <span class="cyber-gradient-text" data-i18n="hero_title_2">Engineered for Tomorrow.</span>
+      </h1>
+      <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero_subtitle">
+        High-ticket aesthetic tech, ChatGPT-integrated hardware, and ultra-durable EDC tools. Delivered directly from the world's silicon capital to US & EU in 7–10 days.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#featured" class="hero-cta-btn px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm tracking-wide shadow-lg neon-glow hover:scale-105 transition-all" data-i18n="hero_cta_order">
+          ORDER TODAY'S DROP →
+        </a>
+        <a href="#products" class="hero-view-btn px-8 py-4 rounded-xl bg-dark-850 border border-slate-700 text-slate-200 font-semibold text-sm hover:border-slate-500 transition-all" data-i18n="hero_cta_view">
+          View All 10 Gadgets
+        </a>
+      </div>
+
+      <!-- Trust Badges Strip -->
+      <div class="trust-strip mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-10 border-t border-slate-800">
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">✈️</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_1_title">7-10 Days Express</div><div class="text-[11px] text-slate-400" data-i18n="trust_1_desc">YunExpress / 4PX Line</div></div>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">🔒</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_2_title">256-Bit SSL Checkout</div><div class="text-[11px] text-slate-400" data-i18n="trust_2_desc">Stripe & PayPal Verified</div></div>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">🛡️</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_3_title">30-Day Guarantee</div><div class="text-[11px] text-slate-400" data-i18n="trust_3_desc">Hassle-free replacement</div></div>
+        </div>
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-2xl">⭐</span>
+          <div class="text-left"><div class="text-xs font-bold text-white uppercase" data-i18n="trust_4_title">4.9/5 Rating</div><div class="text-[11px] text-slate-400" data-i18n="trust_4_desc">Over 1,200+ Global Orders</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Spotlight Hero Product -->
+  <section id="featured" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400" data-i18n="spotlight_badge">Weekly Top Performer</span>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-white" data-i18n="spotlight_heading">Spotlight AI EDC Gadget</h2>
+      </div>
+      <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-semibold" data-i18n="stock_warning">Only 14 Units Left In Stock</span>
+    </div>
+
+    <div class="glass-card rounded-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <!-- Product Visual Showcase (Real Assets + Gallery switcher) -->
+      <div class="spotlight-showcase-wrap lg:col-span-6 flex flex-col items-center justify-center bg-dark-950/60 rounded-xl p-4 sm:p-6 border border-slate-800">
+        <div class="spotlight-img-frame relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl group bg-dark-900">
+          <img id="spotlightMainImg" src="assets/images/products/01-ai-voice-recorder.jpg" alt="AI Voice Recorder Card" class="w-full h-full object-cover object-center transition-all duration-300">
+          <div class="absolute top-4 right-4 bg-cyan-500/30 backdrop-blur-md border border-cyan-400/50 text-cyan-300 text-[11px] font-mono px-2.5 py-1 rounded-full shadow-lg">MagSafe 15W</div>
+          <div class="spotlight-img-caption absolute bottom-3 left-3 right-3 p-2.5 sm:p-3 rounded-xl bg-dark-950/85 backdrop-blur-md border border-slate-700/70 flex items-center justify-between">
+            <div class="truncate mr-2">
+              <div class="font-display font-bold text-sm text-white truncate" data-i18n="p1_name">AI Voice Recorder Card</div>
+              <div class="text-[11px] text-slate-400 truncate" data-i18n="p1_sub">Ultra-Slim 0.12" Brushed Aluminium</div>
+            </div>
+            <button onclick="toggleSpotlightView()" class="spotlight-toggle-btn shrink-0 text-xs px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all shadow-md">
+              <span id="spotlightBtnText">View Feature Breakdown</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Thumbnails Selector -->
+        <div class="mt-4 flex items-center gap-3">
+          <button onclick="setSpotlightImg('assets/images/products/01-ai-voice-recorder.jpg', 0)" class="spotlight-thumb border-2 border-cyan-400 rounded-lg overflow-hidden w-16 h-12 bg-dark-900 transition-all shadow">
+            <img src="assets/images/products/01-ai-voice-recorder.jpg" alt="Angle 1" class="w-full h-full object-cover">
+          </button>
+          <button onclick="setSpotlightImg('assets/images/products/spotlight-recorder-infographic.jpg', 1)" class="spotlight-thumb border-2 border-transparent hover:border-slate-500 rounded-lg overflow-hidden w-16 h-12 bg-dark-900 transition-all shadow">
+            <img src="assets/images/products/spotlight-recorder-infographic.jpg" alt="Infographic" class="w-full h-full object-cover">
+          </button>
+        </div>
+
+        <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs text-slate-400">
+          <span class="spotlight-pill px-2.5 py-1 bg-dark-850 rounded border border-slate-700">64GB Storage</span>
+          <span class="spotlight-pill px-2.5 py-1 bg-dark-850 rounded border border-slate-700">30h Continuous Rec</span>
+          <span class="spotlight-pill px-2.5 py-1 bg-dark-850 rounded border border-slate-700">Dual MEMS Mics</span>
+        </div>
+      </div>
+
+      <!-- Buy Box Details -->
+      <div class="lg:col-span-6 space-y-6">
+        <div class="flex items-center gap-2">
+          <div class="flex text-amber-400 text-sm">★★★★★</div>
+          <span class="text-xs text-slate-400 font-medium" data-i18n="spotlight_reviews">4.9 (184 Verified Reviews)</span>
+          <span class="text-emerald-400 text-xs font-semibold ml-2" data-i18n="spotlight_dispatch">● Ships Tomorrow</span>
+        </div>
+
+        <h3 class="text-2xl sm:text-4xl font-display font-extrabold text-white leading-snug" data-i18n="spotlight_title">
+          Magnetic AI Voice Recorder & Smart Meeting Transcriber
+        </h3>
+
+        <div class="flex items-baseline gap-4">
+          <span class="text-3xl sm:text-4xl font-black text-white">$49.99</span>
+          <span class="text-lg text-slate-500 line-through">$89.99</span>
+          <span class="px-2.5 py-0.5 rounded bg-red-500 text-white font-bold text-xs uppercase" data-i18n="discount_tag">Save 44%</span>
+        </div>
+
+        <ul class="space-y-3 text-sm text-slate-300 pt-2 border-t border-slate-800">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="spotlight_bullet_1"><strong>One-Tap ChatGPT Summaries:</strong> Instant auto-transcription with speaker separation and structured action items via mobile app.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="spotlight_bullet_2"><strong>Snap & Go MagSafe Form Factor:</strong> Credit card profile effortlessly snaps to iPhones or slips directly into everyday wallets.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <span data-i18n="spotlight_bullet_3"><strong>Dual MEMS Noise Reduction:</strong> Crystal-clear voice recording up to 10 meters away even in busy conference rooms.</span>
+          </li>
+        </ul>
+
+        <div class="flash-box p-4 rounded-xl bg-dark-850/80 border border-slate-700 flex items-center justify-between">
+          <div class="text-xs text-slate-300">
+            <div class="font-bold text-white" data-i18n="flash_box_title">⚡ Flash Allocation Active</div>
+            <div data-i18n="flash_box_desc">Promotional discount locks for another 12 minutes</div>
+          </div>
+          <div class="font-mono text-cyan-400 font-bold text-sm">11:48</div>
+        </div>
+
+        <div class="space-y-3 pt-2">
+          <a href="#checkout" class="spotlight-buy-btn block w-full py-4 rounded-xl text-center bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-sm uppercase tracking-wider shadow-lg hover:opacity-95 transition-all" data-i18n="spotlight_buy_btn">
+            CLAIM NOW — $49.99 (EXPRESS SHIPPING INCLUDED)
+          </a>
+          <div class="text-center text-xs text-slate-400" data-i18n="payment_guarantee">
+            Guaranteed safe checkout with <strong>Stripe · Visa · Apple Pay · PayPal</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 Curated Products Grid -->
+  <section id="products" class="py-20 bg-dark-900/60 border-t border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400" data-i18n="catalog_badge">Huaqiangbei Direct Catalog</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white mt-2" data-i18n="catalog_title">10 Small & Beautiful Outbound Bestsellers</h2>
+        <p class="text-slate-400 text-sm mt-3" data-i18n="catalog_subtitle">High margin, lightweight (&lt;300g), high perceived value, and tailored for international creators & tech lovers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Product 1 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[11px] font-semibold" data-i18n="p1_cat">AI HARDWARE</span>
+              <span class="text-xs text-slate-400 font-mono">01/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/01-ai-voice-recorder.jpg" alt="AI Voice Recorder Card" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p1_name">AI Voice Recorder Card</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p1_desc">MagSafe card recorder with ChatGPT automated notes, mind mapping & voice separation.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$49.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$89.99</span>
+            </div>
+            <button onclick="handleAddToCart('AI Voice Recorder Card')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-400 text-[11px] font-semibold" data-i18n="p2_cat">RETRO GAMING</span>
+              <span class="text-xs text-slate-400 font-mono">02/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/02-retro-gaming-console.jpg" alt="Retro Gaming Console" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p2_name">Open-Source Retro Gaming Console</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p2_desc">IPS display, Linux open system, preloaded with 10,000+ classic arcade titles.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$49.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$79.99</span>
+            </div>
+            <button onclick="handleAddToCart('Retro Gaming Console')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold" data-i18n="p3_cat">OFFICE & STUDY</span>
+              <span class="text-xs text-slate-400 font-mono">03/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/03-pocket-thermal-printer.jpg" alt="Mini Pocket Thermal Printer" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p3_name">Mini Pocket Thermal Printer</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p3_desc">Zero ink required. Bluetooth connects to iOS/Android for instant labels, receipts & journal art.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$29.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$49.99</span>
+            </div>
+            <button onclick="handleAddToCart('Mini Pocket Thermal Printer')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-semibold" data-i18n="p4_cat">EDC ESSENTIAL</span>
+              <span class="text-xs text-slate-400 font-mono">04/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/04-titanium-mini-flashlight.jpg" alt="Titanium Flashlight" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p4_name">Mini Titanium 1000LM Flashlight</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p4_desc">Thumb-size aerospace titanium body with UV detection & magnetic base mount.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$34.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$59.99</span>
+            </div>
+            <button onclick="handleAddToCart('Mini Titanium Flashlight')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-[11px] font-semibold" data-i18n="p5_cat">DESK SETUP</span>
+              <span class="text-xs text-slate-400 font-mono">05/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/05-cyberpunk-oled-clock.jpg" alt="Cyberpunk OLED Clock" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p5_name">Cyberpunk OLED Smart Desk Clock</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p5_desc">Real-time Crypto ticker, live weather, YouTube subscriber tracker & PC hardware dashboard.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$69.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$109.99</span>
+            </div>
+            <button onclick="handleAddToCart('Cyberpunk OLED Clock')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-pink-500/10 border border-pink-500/30 text-pink-400 text-[11px] font-semibold" data-i18n="p6_cat">PET GADGET</span>
+              <span class="text-xs text-slate-400 font-mono">06/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/06-pet-gps-laser-collar.jpg" alt="Smart Pet GPS Collar" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p6_name">Smart Pet GPS & Laser Collar</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p6_desc">Zero-subscription GPS tracking collar equipped with automatic interactive laser entertainment.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$24.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$39.99</span>
+            </div>
+            <button onclick="handleAddToCart('Smart Pet GPS Collar')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-rose-500/10 border border-rose-500/30 text-rose-400 text-[11px] font-semibold" data-i18n="p7_cat">ACTION VLOG</span>
+              <span class="text-xs text-slate-400 font-mono">07/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/07-wearable-4k-bodycam.jpg" alt="Magnetic Wearable 4K Body Cam" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p7_name">Magnetic Wearable 4K Body Cam</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p7_desc">Ultra-light snap camera with gyro stabilization for cycling, travel blogs, and security footage.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$59.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$99.99</span>
+            </div>
+            <button onclick="handleAddToCart('Magnetic Wearable 4K Body Cam')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-[11px] font-semibold" data-i18n="p8_cat">AUDIO & SPORT</span>
+              <span class="text-xs text-slate-400 font-mono">08/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/08-bone-conduction-sunglasses.jpg" alt="Audio Sunglasses" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p8_name">Bone Conduction Audio Sunglasses</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p8_desc">Polarized UV400 lenses with open-ear bone conduction transducers for running and driving.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$49.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$79.99</span>
+            </div>
+            <button onclick="handleAddToCart('Bone Conduction Audio Sunglasses')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="glass-card rounded-xl p-5 flex flex-col justify-between transition-all group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-lime-500/10 border border-lime-500/30 text-lime-400 text-[11px] font-semibold" data-i18n="p9_cat">AUTOMOTIVE</span>
+              <span class="text-xs text-slate-400 font-mono">09/10</span>
+            </div>
+            <div class="product-img-wrap h-48 bg-dark-950 rounded-lg overflow-hidden mb-4 border border-slate-800 relative">
+              <img src="assets/images/products/09-obd2-hud-projector.jpg" alt="Mini OBD2 Scanner & HUD" class="w-full h-full object-cover object-center img-zoom">
+            </div>
+            <h4 class="font-display font-bold text-base text-white" data-i18n="p9_name">Mini OBD2 Scanner & HUD Projector</h4>
+            <p class="text-xs text-slate-400 mt-2 line-clamp-2" data-i18n="p9_desc">Direct plug OBD engine diagnostics with windshield head-up speed and alert display.</p>
+          </div>
+          <div class="product-card-footer mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div>
+              <span class="text-lg font-bold text-white">$29.99</span>
+              <span class="text-xs text-slate-500 line-through ml-1.5">$49.99</span>
+            </div>
+            <button onclick="handleAddToCart('Mini OBD2 Scanner & HUD')" class="add-to-cart-btn px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors" data-i18n="add_to_cart">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 10 (Featured Special Bundle) -->
+        <div class="glass-card rounded-xl p-5 sm:p-6 flex flex-col justify-between transition-all sm:col-span-2 lg:col-span-3 group">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="product-img-wrap md:col-span-5 h-56 sm:h-64 bg-dark-950 rounded-lg overflow-hidden border border-slate-800 relative">
+              <img src="assets/images/products/10-electric-screwdriver-kit.jpg" alt="Smart Precision Screwdriver Kit" class="w-full h-full object-cover object-center img-zoom">
+              <div class="absolute bottom-2 right-2 px-2 py-1 rounded bg-dark-950/80 text-[10px] text-cyan-300 font-mono border border-cyan-500/30">64 S2 BITS + SOLDER</div>
+            </div>
+            <div class="md:col-span-7">
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2.5 py-1 rounded bg-teal-500/10 border border-teal-500/30 text-teal-400 text-[11px] font-semibold" data-i18n="p10_cat">MAKER & HARDWARE</span>
+                <span class="text-xs text-slate-400 font-mono" data-i18n="p10_badge">10/10 SPECIAL BUNDLE</span>
+              </div>
+              <h4 class="font-display font-bold text-xl text-white" data-i18n="p10_name">Smart Precision Electric Screwdriver & Solder Kit</h4>
+              <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="p10_desc">Adjustable digital torque control, shadowless LED ring, and 64 S2 steel bits. Engineered for phone repair, drone assembly, and electronics prototyping.</p>
+              
+              <div class="mt-4 flex flex-wrap gap-2 text-[11px] text-slate-400">
+                <span class="product-10-pill px-2 py-0.5 rounded bg-dark-850 border border-slate-700">OLED Digital Screen</span>
+                <span class="product-10-pill px-2 py-0.5 rounded bg-dark-850 border border-slate-700">1.5 N·m Torque</span>
+                <span class="product-10-pill px-2 py-0.5 rounded bg-dark-850 border border-slate-700">Type-C Fast Charge</span>
+              </div>
+
+              <div class="product-card-footer mt-5 flex items-center justify-between pt-4 border-t border-slate-800">
+                <div>
+                  <span class="text-2xl font-black text-white">$49.99</span>
+                  <span class="text-xs text-slate-500 line-through ml-2">$79.99</span>
+                </div>
+                <button onclick="handleAddToCart('Precision Electric Screwdriver Kit')" class="maker-kit-btn px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors shadow-lg" data-i18n="p10_cta">Grab Maker Kit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- One-Page Fast Checkout Section -->
+  <section id="checkout" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-cyan-400" data-i18n="chk_badge">Streamlined 1-Page Checkout</span>
+      <h2 class="text-2xl sm:text-3xl font-display font-bold text-white mt-1" data-i18n="chk_title">Order Review & Secure Settlement</h2>
+      <p class="text-slate-400 text-xs mt-2" data-i18n="chk_subtitle">Optimized form fields without redundant inputs for maximum completion speed.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Form -->
+      <form onsubmit="event.preventDefault(); showToast(translations[window.currentLang || 'en'].checkout_success);" class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+        <div>
+          <h3 class="text-base font-display font-bold text-white flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center">1</span>
+            <span data-i18n="chk_step1">Express Shipping Destination</span>
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_email_lbl">Email for 17TRACK Tracking Updates</label>
+              <input type="email" required value="alex.engineer@example.com" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_fname_lbl">First Name</label>
+              <input type="text" required value="Alex" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_lname_lbl">Last Name</label>
+              <input type="text" required value="Smith" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none transition-all">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_addr_lbl">Delivery Address</label>
+              <input type="text" required value="742 Evergreen Terrace" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_city_lbl">City</label>
+              <input type="text" required value="Springfield" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none transition-all">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-400 mb-1" data-i18n="chk_zip_lbl">State / Zip Code</label>
+              <input type="text" required value="OR 97477" class="w-full bg-dark-950 border border-slate-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:border-cyan-400 focus:outline-none transition-all">
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-divider pt-6 border-t border-slate-800">
+          <h3 class="text-base font-display font-bold text-white flex items-center gap-2 mb-4">
+            <span class="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center">2</span>
+            <span data-i18n="chk_step2">Encrypted Payment</span>
+          </h3>
+          <div class="stripe-box p-4 rounded-xl bg-dark-950 border border-cyan-500/40 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💳</span>
+              <div>
+                <div class="text-sm font-bold text-white" data-i18n="chk_stripe_lbl">Stripe Card Payment</div>
+                <div class="text-xs text-slate-400" data-i18n="chk_stripe_sub">Visa, Mastercard, Apple Pay, PayPal accepted</div>
+              </div>
+            </div>
+            <span class="text-xs text-cyan-400 font-mono font-semibold">256-Bit SSL</span>
+          </div>
+        </div>
+
+        <button type="submit" class="checkout-submit-btn w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-sm uppercase tracking-wider shadow-xl hover:opacity-95 transition-all" data-i18n="chk_submit_btn">
+          COMPLETE TRANSACTION ($49.99) →
+        </button>
+      </form>
+
+      <!-- Order Summary -->
+      <div class="order-summary-card lg:col-span-5 glass-card rounded-2xl p-6 sm:p-8 space-y-5">
+        <h3 class="text-base font-display font-bold text-white pb-3 border-b border-slate-800" data-i18n="summary_title">Order Summary</h3>
+        <div class="flex items-center justify-between text-sm">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/products/01-ai-voice-recorder.jpg" alt="AI Voice Recorder Card" class="w-12 h-12 rounded-lg object-cover border border-slate-700 shadow-sm shrink-0">
+            <div>
+              <div class="font-semibold text-white" data-i18n="p1_name">AI Voice Recorder Card</div>
+              <div class="text-xs text-slate-400" data-i18n="summary_item_sub">Qty: 1 · Midnight Titanium</div>
+            </div>
+          </div>
+          <span class="font-bold text-white">$49.99</span>
+        </div>
+
+        <div class="space-y-2 pt-3 border-t border-slate-800 text-xs text-slate-400">
+          <div class="flex justify-between">
+            <span data-i18n="summary_subtotal">Subtotal</span>
+            <span class="text-white font-semibold">$49.99</span>
+          </div>
+          <div class="flex justify-between">
+            <span data-i18n="summary_shipping">Direct Air Line (7-10 Days)</span>
+            <span class="text-emerald-400 font-semibold" data-i18n="summary_free">FREE (Flash Deal)</span>
+          </div>
+          <div class="flex justify-between text-sm font-bold text-white pt-2 border-t border-slate-800">
+            <span data-i18n="summary_total">Total Amount</span>
+            <span class="text-cyan-400 text-lg">$49.99</span>
+          </div>
+        </div>
+
+        <div class="guarantee-box p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-300 flex items-start gap-3">
+          <span class="text-lg">🛡️</span>
+          <div data-i18n="summary_guarantee">
+            <strong>30-Day Zero-Risk Return Policy:</strong> If you're not completely impressed by build quality or software features, receive a replacement or full refund.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer id="shipping" class="bg-dark-950 border-t border-slate-800/80 pt-16 pb-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <div class="font-display font-bold text-white text-lg mb-3">NEXUS<span class="text-cyan-400">TECH</span></div>
+        <p class="leading-relaxed text-slate-400" data-i18n="footer_about">Direct-to-consumer hardware supply hub based in Huaqiangbei, Shenzhen. Connecting next-gen electronic engineering with global makers.</p>
+      </div>
+      <div>
+        <div class="font-bold text-white uppercase tracking-wider mb-3" data-i18n="footer_support_title">Order Support</div>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_track">Track Parcel (17TRACK Integration)</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_shipping_terms">Shipping Terms (7-10 Work Days)</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_return_form">30-Day Return & Exchange Form</a></li>
+          <li><a href="mailto:support@nexustech-store.com" class="hover:text-cyan-400">support@nexustech-store.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white uppercase tracking-wider mb-3" data-i18n="footer_legal_title">Legal & Compliance</div>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_privacy">Privacy Policy (GDPR / CCPA)</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_tos">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_warranty">Refund & Warranty Protection</a></li>
+          <li><a href="#" class="hover:text-cyan-400" data-i18n="footer_dispatch">Shenzhen HQ Dispatch Hub</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white uppercase tracking-wider mb-3" data-i18n="footer_newsletter_title">VIP Hardware Drops</div>
+        <p class="mb-3" data-i18n="footer_newsletter_desc">Get notified about unreleased micro-controllers & EDC tools.</p>
+        <div class="flex">
+          <input type="email" placeholder="Your developer email" class="w-full bg-dark-900 border border-slate-700 rounded-l-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400">
+          <button onclick="showToast('Subscribed to VIP drops!')" class="footer-join-btn bg-blue-600 px-3 py-2 rounded-r-lg text-white font-bold hover:bg-blue-500 transition-colors" data-i18n="footer_join">JOIN</button>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-900 text-center text-slate-600" data-i18n="copyright">
+      &copy; 2026 NEXUS TECH Store. Built with Tailwind CSS & WooCommerce Architecture. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Application Logic, Dual Theme Engine & i18n Engine -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
